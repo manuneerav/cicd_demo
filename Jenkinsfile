@@ -2,11 +2,6 @@ pipeline{
     agent any
     environment{
         IMAGE_Name = 'neeravnilay/cicd_demo:latest'
-<<<<<<< HEAD
-=======
-        SONARQUBE_URL = 'http://localhost:9000'
->>>>>>> 49bd535 (second commit)
-    }
 
     stages{
         stage('clone Repository'){
