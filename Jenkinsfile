@@ -3,6 +3,8 @@ pipeline{
     environment{
         IMAGE_Name = 'neeravnilay/cicd_demo:latest'
 
+    }
+
     stages{
         stage('clone Repository'){
             steps{
@@ -24,7 +26,7 @@ pipeline{
 
         stage('build Image'){
             steps{
-                docker build -t $IMAGE_Name .
+                sh 'docker build -t $IMAGE_Name .'
             }
         }
 
