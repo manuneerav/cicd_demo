@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('clone Repository'){
             steps{
-                git https://github.com/manuneerav/cicd_demo.git
+                git 'https://github.com/manuneerav/cicd_demo.git'
             }
 
 
