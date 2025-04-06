@@ -5,14 +5,6 @@ pipeline{
 
     }
 
-    stages{
-        stage('clone Repository'){
-            steps{
-                git 'https://github.com/manuneerav/cicd_demo.git'
-            }
-
-
-        }
 
         stage('Sonarcube Analysis'){
             steps{
