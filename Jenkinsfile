@@ -9,7 +9,8 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh 'sonar-scanner -Dsonar.projectKey=cicd_demo_project -Dsonar.sources=. -Dsonar.host.url=$SONARQUBE_URL'
+                    def scannerHome = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=cicd_demo_project -Dsonar.sources=."
                 }
             }
         }
